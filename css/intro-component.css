@@ -1,0 +1,22 @@
+form {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  justify-content: space-between;
+  height: 200px;
+}
+.input {
+  display: flex;
+  flex-direction: column;
+}
+.error {
+  color: red;
+  visibility: hidden;
+}
+.input-field {
+  border-color: red;
+}
+.exclamation-mark {
+  visibility: hidden;
+  width: 20px;
+}
