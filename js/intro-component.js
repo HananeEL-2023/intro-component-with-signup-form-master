@@ -24,8 +24,10 @@ function checkInputs() {
     OnError(email, "Email cannot be empty");
   } else {
     if (!isValidEmail(email.value.trim())) {
+      email.style.color = "red";
       OnError(email, "Looks like this is not an email");
     } else {
+      email.style.color = "";
       OnSucces(email);
     }
   }
@@ -42,6 +44,7 @@ function OnError(input, message) {
   errorMessage.style.visibility = "visible";
   errorMessage.innerText = message;
   input.classList.add("input-field");
+  parent.firstElementChild.nextElementSibling.style.visibility = "visible";
 }
 
 function OnSucces(input) {
@@ -49,6 +52,7 @@ function OnSucces(input) {
   let errorMessage = parent.querySelector("span");
   errorMessage.innerText = "";
   input.classList.remove("input-field");
+  parent.firstElementChild.nextElementSibling.style.visibility = "hidden";
 }
 
 function isValidEmail(email) {
